@@ -52,7 +52,8 @@ An Api to help users get, create, update and delete information about movies
 
 
 # Database Schema
-<img width="1800" alt="Screenshot 1444-08-29 at 9 58 54 AM" src="https://user-images.githubusercontent.com/115143290/226539119-a01d8536-5100-44b4-919a-c3e6e5062b71.png">
+
+<img width="201" alt="Screenshot 1444-08-29 at 2 57 41 PM" src="https://user-images.githubusercontent.com/115143290/226599834-175b24ab-62a2-4385-9eb0-b8b8ddbffd09.png">
 
 
 

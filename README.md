@@ -16,6 +16,7 @@ An Api to help users get, create, update and delete information about movies
 4. Delete movie information
 
 ### Info we nedded:
+
 1. Name
 2. Year
 3. Story
@@ -23,25 +24,26 @@ An Api to help users get, create, update and delete information about movies
 5. Actors
 6. Movie Director
 
-#Get Movie List with CRUD API:
 
-##Create:
+# Get Movie List with CRUD API:
+
+## Create:
 
     app.post("movies") { req -> EventLoopFuture <MoviesList> in
         let movie = try req.content.decode(MoviesList.self)
         return movie.create(on: req.db).map {movie}
     }
     
-    try app.register(collection: MoviesListController())
-}
-##Read:
+    try app.register(collection: MoviesListController())}
+
+## Read:
 
     app.get("movies", ":movieID") { req -> EventLoopFuture <MoviesList> in
         MoviesList.find(req.parameters.get("movieID"), on: req.db)
             .unwrap(or: Abort(.notFound))
     }
   
-##Update:
+## Update:
   
      app.put("movies") { req -> EventLoopFuture <HTTPStatus> in
         let movie = try req.content.decode(MoviesList.self)
@@ -61,7 +63,7 @@ An Api to help users get, create, update and delete information about movies
             }
     }
   
-##Delete:
+## Delete:
     
     app.delete("movies", ":movieID") { req -> EventLoopFuture <HTTPStatus> in
         MoviesList.find(req.parameters.get("movieID"), on: req.db)

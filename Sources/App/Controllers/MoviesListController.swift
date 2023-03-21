@@ -11,12 +11,6 @@ struct Movies: Content{
     let movieactor2: String
     let moviedirector: String
 }
-//struct Actors: Content{
-//    let actor1: String
-//    let actor2: String
-//    let actor3: String?
-//    let actor4: String?
-//}
 
 struct MoviesListController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
@@ -30,7 +24,7 @@ struct MoviesListController: RouteCollection {
             movieslist.put(use: update)
         }
     }
-
+    
     func index(req: Request) throws -> EventLoopFuture <[MoviesList]> {
         return MoviesList.query(on: req.db).all()
     }
@@ -49,16 +43,7 @@ struct MoviesListController: RouteCollection {
     }
     
     
-//    func update(req: Request) throws -> EventLoopFuture <MoviesList> {
-//        let input = try req.content.decode (MoviesList.self)
-//        return MoviesList.find(req.parameters.get ("id"), on: req.db)
-//            .unwrap(or: Abort(.notFound))
-//            .flatMap { movieslist in
-//                movieslist.moviename = input.moviename
-//        return movieslist.save(on: req.db) .map { MoviesList (id: movieslist.id, moviename:movieslist.moviename) }}
-//
-//    }
-  
+    
     func update(req: Request) throws -> EventLoopFuture <HTTPStatus> {
         let newmovie = try req.content.decode (MoviesList.self)
         return MoviesList.find(newmovie.id, on: req.db)

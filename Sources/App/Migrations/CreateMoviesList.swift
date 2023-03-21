@@ -22,15 +22,11 @@ struct CreateMoviesList: AsyncMigration {
             .field("moviegenre", .string)
             .field("movieactor1", .string)
             .field("movieactor2", .string)
-//            .field("actor1", .string)
-//            .field("actor2", .string)
-//            .field("actor3", .string)
-//            .field("actor4", .string)
             .field("moviedirector", .string)
             .create()
     }
     
-//undo
+    //undo
     func revert(on database: Database) async throws {
         try await database.schema("MoviesList").delete()
     }

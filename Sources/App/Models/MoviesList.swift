@@ -6,7 +6,7 @@ final class MoviesList: Model, Content {
     
     @ID(key: .id)
     var id: UUID?
-
+    
     @Field(key: "moviename")
     var moviename: String
     @Field(key: "movieyear")
@@ -21,9 +21,9 @@ final class MoviesList: Model, Content {
     var movieactor2: String
     @Field(key: "moviedirector")
     var moviedirector: String
-      
+    
     init() { }
-
+    
     init(id: UUID? = nil, moviename: String, movieyear: String, moviestory: String, moviegenre: String, movieactor1: String, movieactor2: String,moviedirector: String) {
         self.id = id
         self.moviename = moviename
@@ -33,6 +33,6 @@ final class MoviesList: Model, Content {
         self.movieactor1 = movieactor1
         self.movieactor2 = movieactor2
         self.moviedirector = moviedirector
-
+        
     }
 }

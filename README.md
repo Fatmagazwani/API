@@ -23,7 +23,7 @@ An Api to help users get, create, update and delete information about movies
 # Movie List with CRUD API:
 
 ## Create:
-### To get add a movie to the movies list:
+### To add a movie to the movies list:
     http://127.0.0.1:8080/movies
 
 

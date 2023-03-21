@@ -1,4 +1,8 @@
 # API
+Team 1 Backend
+1. Ghala AlBarakati
+2. Fatma Gazwani
+3. Nouf alghamdi
 
 # Solution Concept
 

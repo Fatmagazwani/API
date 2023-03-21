@@ -15,9 +15,10 @@ An Api to help users get, create, update and delete information about movies
 # Feature List
 
 1. Create movies information
-2. Get movie list information
-2. Update movie information
-4. Delete movie information
+2. Get all movies list information
+3. Get a specific movie information
+4. Update movie information
+5. Delete movie information
 
 
 # Movie List with CRUD API:
@@ -57,4 +58,3 @@ An Api to help users get, create, update and delete information about movies
 
 
 
-### Deployment Server (if any)

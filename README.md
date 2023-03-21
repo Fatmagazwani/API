@@ -26,6 +26,7 @@ An Api to help users get, create, update and delete information about movies
 #Get Movie List with CRUD API:
 
 ##Create:
+
     app.post("movies") { req -> EventLoopFuture <MoviesList> in
         let movie = try req.content.decode(MoviesList.self)
         return movie.create(on: req.db).map {movie}
@@ -34,6 +35,7 @@ An Api to help users get, create, update and delete information about movies
     try app.register(collection: MoviesListController())
 }
 ##Read:
+
     app.get("movies", ":movieID") { req -> EventLoopFuture <MoviesList> in
         MoviesList.find(req.parameters.get("movieID"), on: req.db)
             .unwrap(or: Abort(.notFound))
@@ -60,6 +62,7 @@ An Api to help users get, create, update and delete information about movies
     }
   
 ##Delete:
+    
     app.delete("movies", ":movieID") { req -> EventLoopFuture <HTTPStatus> in
         MoviesList.find(req.parameters.get("movieID"), on: req.db)
             .unwrap(or: Abort(.notFound))
@@ -72,7 +75,6 @@ An Api to help users get, create, update and delete information about movies
 # Database Schema
 <img width="1800" alt="Screenshot 1444-08-29 at 9 58 54 AM" src="https://user-images.githubusercontent.com/115143290/226539119-a01d8536-5100-44b4-919a-c3e6e5062b71.png">
 
-ER Diagram, (UML) diagram or any method you used to represent your database schema.
 
 
 ### Deployment Server (if any)

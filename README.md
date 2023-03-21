@@ -33,7 +33,7 @@ An Api to help users get, create, update and delete information about movies
     http://127.0.0.1:8080/movies
  
  
-### To get a spesific movie from the movies list:
+### To get a specific movie from the movies list:
     http://127.0.0.1:8080/movies/id
   
   
